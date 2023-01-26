@@ -6,16 +6,17 @@ def pascal_triangle(n):
         Returns an empty list if n <= 0
         assumes n will be always an integer
     """
-    
     master = []
-    temp = []
     count = 0
-    
-    while count <= n:
+
+    if (n <= 0):
+        return master
+
+    while count < n:
         if count == 0:
             temp = [1]
             master.append(temp)
-            
+
         elif count == 1:
             temp = [1, 1]
             master.append(temp)
