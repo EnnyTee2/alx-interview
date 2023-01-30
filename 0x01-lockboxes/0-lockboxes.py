@@ -30,5 +30,4 @@ def canUnlockAll(boxes):
     for status in box_list.values(): # Checking the box status after running all unlock attempts
         if status == False:
             return False # One ore more boxes can not be opened
- 
     return True # All the boxes can be opened
