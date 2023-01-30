@@ -14,11 +14,11 @@ Create a function def pascal_triangle(n): that returns a list of lists of intege
           for row in triangle:
               print("[{}]".format(",".join([str(x) for x in row])))
 
-print_triangle(pascal_triangle(5))
+      print_triangle(pascal_triangle(5))
 
 ## OUTPUT 
-[1]                                                                                                   
-[1,1]                                                                                                 
-[1,2,1]                                                                                               
-[1,3,3,1]                                                                                             
-[1,4,6,4,1]                                                                                           
+      [1]                                                                                             
+      [1,1]                                                                                           
+      [1,2,1]                                                                                         
+      [1,3,3,1]                                                                                       
+      [1,4,6,4,1]                                                                                     
