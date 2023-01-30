@@ -7,12 +7,12 @@ Create a function def pascal_triangle(n): that returns a list of lists of intege
     
 ## Example Code: 
 
-def print_triangle(triangle):
-    """
-    Print the triangle
-    """
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
+      def print_triangle(triangle):
+          """
+          Print the triangle
+          """
+          for row in triangle:
+              print("[{}]".format(",".join([str(x) for x in row])))
 
 print_triangle(pascal_triangle(5))
 
