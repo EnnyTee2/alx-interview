@@ -26,7 +26,7 @@ Write a method that determines if all the boxes can be opened.
       boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
       print(canUnlockAll(boxes))
       
-     ## OUTPUT 
+   ## OUTPUT 
       True
       True
       False
