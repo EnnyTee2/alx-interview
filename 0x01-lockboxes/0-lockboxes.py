@@ -1,7 +1,17 @@
 #!/usr/bin/python3
 """LockBoxes Interview Challenge"""
 
-def canUnlockAll(boxes):
+
+
+
+
+
+
+
+
+
+
+"""def canUnlockAll(boxes):
     '''determines if all the boxes can be opened or not
     Returns:
         True: all boxes can be opened
@@ -29,3 +39,4 @@ def canUnlockAll(boxes):
         if i not in opened_boxes and i != 0:
             return False
     return True
+"""
