@@ -13,6 +13,7 @@ def canUnlockAll(boxes):
     box_list = {}  # dictionary to keep track of each box's unlock status
     count = 0  # unlock cycle counter
     pending = 0  # tracker for unopened boxes
+    x = 1
 
     while count < (box_len - pending):
         x = 1  # initialise the box index for the next cycle
