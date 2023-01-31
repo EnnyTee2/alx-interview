@@ -17,7 +17,7 @@ def canUnlockAll(boxes):
             if x in keys:
                 box_list[f'{x}'] = True  # set box status
                 for key in boxes[x]:
-                    if key not in keys:  # if same key has not been added earlier
+                    if key not in keys:  # if same key was not added earlier
                         keys.append(key)
             else:
                 box_list[f'{x}'] = False  # set box status
@@ -26,8 +26,9 @@ def canUnlockAll(boxes):
         count += 1  # increment the unlock cycle counter
         if pending == 0:  # if all boxes get unlocked after first cycle
             break
-  
-    for status in box_list.values():  # Checking the box status after running all unlock attempts
-        if status == False:
+
+# Checking the box status after running all unlock attempts
+    for status in box_list.values():
+        if status is False:
             return False  # One ore more boxes can not be opened
     return True  # All the boxes can be opened
