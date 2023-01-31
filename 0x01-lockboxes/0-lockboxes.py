@@ -9,7 +9,7 @@ def canUnlockAll(boxes):
         True: all boxes can be opened
         False: not all boxes can be opened
     """
-   length = len(boxes)
+    length = len(boxes)
     keys = set()
     opened_boxes = []
     i = 0
