@@ -3,10 +3,10 @@
 
 
 def canUnlockAll(boxes):
-    '''checks if all the boxes can be unlocked 
-        Returns
-            True: all boxes can be opened
-            False: not all boxes can be opened  
+    '''determines if all the boxes can be opened or not
+    Returns:
+        True: all boxes can be opened
+        False: not all boxes can be opened
     '''
     box_len = len(boxes)  # get total number of boxes
     keys = boxes[0][:]  # initialised list to store availabe keys
@@ -48,6 +48,11 @@ def canUnlockAll(boxes):
     Returns:
         True: all boxes can be opened
         False: not all boxes can be opened
+    '''
+     '''checks if all the boxes can be unlocked 
+        Returns
+            True: all boxes can be opened
+            False: not all boxes can be opened  
     '''
     length = len(boxes)
     keys = set()
