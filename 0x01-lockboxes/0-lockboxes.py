@@ -4,9 +4,9 @@
 
 def canUnlockAll(boxes):
     """ Checks if all the boxes can be unlocked 
-    Returns:
-        True: all boxes can be opened
-        False: not all boxes can be opened  
+        Returns:
+            True: all boxes can be opened
+            False: not all boxes can be opened  
     """
     box_len = len(boxes)  # get total number of boxes
     keys = boxes[0][:]  # initialised list to store availabe keys
