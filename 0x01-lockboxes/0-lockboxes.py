@@ -4,7 +4,7 @@
 
 def canUnlockAll(boxes):
     '''checks if all the boxes can be unlocked 
-        Returns:
+        Returns
             True: all boxes can be opened
             False: not all boxes can be opened  
     '''
@@ -14,7 +14,7 @@ def canUnlockAll(boxes):
     count = 0  # unlock cycle counter
     pending = 0  # tracker for unopened boxes
 
-    while count < box_len - pending:
+    while count < (box_len - pending):
         x = 1  # initialise the box index for the next cycle
         while x < box_len:
             if x in keys:
