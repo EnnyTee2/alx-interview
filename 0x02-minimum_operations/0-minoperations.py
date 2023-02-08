@@ -3,10 +3,9 @@
 
 
 from typing import List
-
-
 global factors
-factors = (2,3,5,7)
+factors = (2, 3, 5, 7)
+
 
 def lcm_gen(num):
     '''Generates the LCMs for a given number'''
