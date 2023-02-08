@@ -18,7 +18,7 @@ def lcm_gen(num):
             if (factor == 7) and (num != 1):
                 yield num
 
-                
+
 def lcm(num) -> List[int]:
     '''Combines the yields from lcm generator'''
     if num <= 1:
