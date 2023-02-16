@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Log Parsing """
+""" A script for log parsing from stdin"""
 
 
 import sys
@@ -31,7 +31,7 @@ try:
                 if number != 0:
                     print(f"{status_code}: {number}")
 
-except Exception as e:
+except KeyboardInterrupt:
     pass
 
 finally:
