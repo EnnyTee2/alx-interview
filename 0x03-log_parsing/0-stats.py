@@ -44,10 +44,6 @@ finally:
 import sys
 
 
-ma =\
-    r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
-re = __import__('re')
-
 def status_writer():
     """ Extracts the data fields from the stream
         and prints the status log
