@@ -36,7 +36,7 @@ def status_writer():
         capture = re.findall(match, line)
         try:
             total_size += int(capture[0][1])
-            status[capture[0][0]] += 1
+            status_count[capture[0][0]] += 1
         except IndexError:
             line_count += 1
             continue
