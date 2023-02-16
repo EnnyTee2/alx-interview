@@ -4,9 +4,6 @@
 import sys
 import re
 
-global line_count
-global total_size
-
 
 match = '.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
 
@@ -16,6 +13,9 @@ status_code = ['200', '301', '400', '401', '403', '404', '405', '500']
 status_count = dict([(code, 0) for code in status_code])
 
 def initialize():
+    global line_count
+    global total_size
+
     line_count = 0
     total_size = 0
     for code in status_code:
@@ -23,6 +23,9 @@ def initialize():
     return
 
 def status_writer():
+    global line_count
+    global total_size
+
     for line in sys.stdin:
         if line_count == 10:
             print(f"File size: {total_size}")
