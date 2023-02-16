@@ -6,7 +6,8 @@ import sys
 import re
 
 
-match = r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
+match =\
+r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
 
 line_count = 0
 total_size = 0
@@ -23,7 +24,7 @@ try:
         except IndexError:
             continue
         line_count += 1
-            
+
         if line_count % 10 == 0:
             print(f"File size: {total_size}")
             for status_code, number in status_count.items():
