@@ -13,6 +13,7 @@ status_code = ['200', '301', '400', '401', '403', '404', '405', '500']
 status_count = dict([(code, 0) for code in status_code])
 
 def initialize():
+    """ Initializes the status fields """
     global line_count
     global total_size
 
@@ -22,7 +23,11 @@ def initialize():
         status_count[code] = 0
     return
 
+
 def status_writer():
+    """ Extracts the data fields from the stream
+        and prints the status log
+    """
     global line_count
     global total_size
 
@@ -30,7 +35,8 @@ def status_writer():
         if line_count == 10:
             print(f"File size: {total_size}")
             for status_code,number in status_count.items():
-                print(f"{status_code}: {number}")
+                if number != 0:
+                    print(f"{status_code}: {number}")
             initialize()
 
         capture = re.findall(match, line)
@@ -42,7 +48,8 @@ def status_writer():
             continue
 
         line_count += 1
-    
+
+
 try:
     while True:
         status_writer()
