@@ -37,9 +37,6 @@ finally:
             print('{}: {}'.format(key, value))
 
 
-
-
-
 '''#!/usr/bin/python3
 """ A script for log parsing from stdin"""
 
@@ -47,8 +44,8 @@ finally:
 import sys
 
 
-
-match = r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
+match =\
+  r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
 re = __import__('re')
 
 def status_writer():
@@ -69,7 +66,7 @@ def status_writer():
             except IndexError:
                 continue
             line_count += 1
-            
+
             if line_count == 10:
                 line_count = 0
                 print(f"File size: {total_size}")
@@ -82,7 +79,6 @@ def status_writer():
         for status_code, number in status_count.items():
             if number != 0:
                 print(f"{status_code}: {number}")
-
 
 if __name__ == '__main__':
     status_writer()
