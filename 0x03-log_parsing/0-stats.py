@@ -57,4 +57,4 @@ try:
 
 except KeyboardInterrupt:
     # initialize()
-    continue
+    status_writer()
