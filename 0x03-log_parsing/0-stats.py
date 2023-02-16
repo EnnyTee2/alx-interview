@@ -6,37 +6,42 @@ import sys
 import re
 
 
-match =\
-  r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
-
-line_count = 0
-total_size = 0
-status_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
-status_count = dict([(code, 0) for code in status_codes])
+match = r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
+status_code = ['200', '301', '400', '401', '403', '404', '405', '500']
 
 
-try:
-    for line in sys.stdin:
-        capture = re.findall(match, line)
-        try:
-            total_size += int(capture[0][1])
-            status_count[capture[0][0]] += 1
-        except IndexError:
-            continue
-        line_count += 1
+def status_writer():
+    """ Extracts the data fields from the stream
+        and prints the status log
+    """
+    line_count = 0
+    total_size = 0
+    status_count = dict([(code, 0) for code in status_code])
 
-        if line_count == 10:
-            print(f"File size: {total_size}")
-            for status_code, number in status_count.items():
-                if number != 0:
-                    print(f"{status_code}: {number}")
-            line_count = 0
+    try:
+        for line in sys.stdin:
+            capture = re.findall(match, line)
+            try:
+                total_size += int(capture[0][1])
+                status_count[capture[0][0]] += 1
+            except IndexError:
+                line_count += 1
+                continue
+            line_count += 1
+            
+            if line_count == 10:
+                line count = 0
+                print(f"File size: {total_size}")
+                for status_code, number in status_count.items():
+                    if number != 0:
+                        print(f"{status_code}: {number}")
 
-except KeyboardInterrupt:
-    pass
+    except KeyboardInterrupt:
+        print(f"File size: {total_size}")
+        for status_code, number in status_count.items():
+            if number != 0:
+                print(f"{status_code}: {number}")
 
-finally:
-    print(f"File size: {total_size}")
-    for status_code, number in status_count.items():
-        if number != 0:
-            print(f"{status_code}: {number}")
+
+if __name__ == '__main__':
+    status_writer()
