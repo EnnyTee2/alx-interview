@@ -49,4 +49,4 @@ try:
 
 except KeyboardInterrupt:
     initialize()
-    # status_writer()
+    status_writer()
