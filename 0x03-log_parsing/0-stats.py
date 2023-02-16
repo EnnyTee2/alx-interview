@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Log Parsing """
 
+
 import sys
 import re
 
@@ -24,7 +25,7 @@ try:
             continue
         line_count += 1
             
-        if line_count % 10 == 0 and total_size != 0:
+        if line_count % 10 == 0:
             print(f"File size: {total_size}")
             for status_code, number in status_count.items():
                 if number != 0:
