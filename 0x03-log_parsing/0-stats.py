@@ -33,7 +33,7 @@ def status_writer():
     global total_size
 
     for line in sys.stdin:
-        if line_count == 10:
+        if line_count % 10 == 0:
             print(f"File size: {total_size}")
             for status_code, number in status_count.items():
                 if number != 0:
