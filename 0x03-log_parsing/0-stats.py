@@ -31,7 +31,7 @@ try:
                 if number != 0:
                     print(f"{status_code}: {number}")
 
-except KeyboardInterrupt:
+except err:
     pass
 
 finally:
