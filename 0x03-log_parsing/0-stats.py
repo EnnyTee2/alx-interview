@@ -7,8 +7,6 @@ import re
 
 
 match = r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
-status_code = ['200', '301', '400', '401', '403', '404', '405', '500']
-
 
 def status_writer():
     """ Extracts the data fields from the stream
@@ -16,6 +14,7 @@ def status_writer():
     """
     line_count = 0
     total_size = 0
+    status_code = ['200', '301', '400', '401', '403', '404', '405', '500']
     status_count = dict([(code, 0) for code in status_code])
 
     try:
