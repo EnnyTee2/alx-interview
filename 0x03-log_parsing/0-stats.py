@@ -38,7 +38,7 @@ def status_writer():
             for status_code, number in status_count.items():
                 if number != 0:
                     print(f"{status_code}: {number}")
-            initialize()
+            # initialize()
 
         capture = re.findall(match, line)
         try:
@@ -56,5 +56,5 @@ try:
         status_writer()
 
 except KeyboardInterrupt:
-    initialize()
-    status_writer()
+    # initialize()
+    continue
