@@ -32,29 +32,28 @@ def status_writer():
     global line_count
     global total_size
 
-    for line in sys.stdin:
-        if line_count % 10 == 0:
-            print(f"File size: {total_size}")
-            for status_code, number in status_count.items():
-                if number != 0:
-                    print(f"{status_code}: {number}")
-            # initialize()
+    try:
+        for line in sys.stdin:
+            if line_count % 10 == 0 and total_size != 0:
+                print(f"File size: {total_size}")
+                for status_code, number in status_count.items():
+                    if number != 0:
+                        print(f"{status_code}: {number}")
+                # initialize()
 
-        capture = re.findall(match, line)
-        try:
-            total_size += int(capture[0][1])
-            status_count[capture[0][0]] += 1
-        except IndexError:
+            capture = re.findall(match, line)
+            try:
+                total_size += int(capture[0][1])
+                status_count[capture[0][0]] += 1
+            except IndexError:
+                line_count += 1
+                continue
+
             line_count += 1
-            continue
 
-        line_count += 1
-
-
-try:
-    while True:
+    except KeyboardInterrupt:
         status_writer()
 
-except KeyboardInterrupt:
-    # initialize()
-    status_writer()
+
+status_writer()
+
