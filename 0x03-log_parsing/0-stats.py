@@ -6,7 +6,7 @@ import sys
 import re
 
 
-mat =\
+match =\
   r'.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
 
 line_count = 0
