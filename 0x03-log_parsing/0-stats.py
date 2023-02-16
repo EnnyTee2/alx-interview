@@ -21,7 +21,6 @@ try:
             total_size += int(capture[0][1])
             status_count[capture[0][0]] += 1
         except IndexError:
-            line_count += 1
             continue
         line_count += 1
             
