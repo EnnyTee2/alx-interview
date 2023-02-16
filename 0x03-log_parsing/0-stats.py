@@ -25,11 +25,12 @@ try:
             continue
         line_count += 1
 
-        if line_count % 10 == 0:
+        if line_count == 10:
             print(f"File size: {total_size}")
             for status_code, number in status_count.items():
                 if number != 0:
                     print(f"{status_code}: {number}")
+            line_count = 0
 
 except KeyboardInterrupt:
     pass
