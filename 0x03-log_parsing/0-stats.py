@@ -4,10 +4,11 @@
 import sys
 import re
 
-
-match = '.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
 global line_count
 global total_size
+
+
+match = '.*\..*\..*\..*\s\-\s\[.*?]\s".*"\s(200|301|400|401|403|404|405|500)\s(\d*)'
 
 line_count = 0
 total_size = 0
