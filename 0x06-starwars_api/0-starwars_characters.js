@@ -19,8 +19,8 @@ request(path, (error, response, body) => {
     // Printing body
     for (const idx of body) {
       if (idx == 'characters') {
-        foreach (const a of idx) {
-          request(a, (error, response, body) => {
+        idx.forEach(character => {
+          request(character, (error, response, body) => {
             console.log(body)
           });
         }
