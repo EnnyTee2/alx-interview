@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-import copy
 
 def rotate_2d_matrix(matrix):
+    import copy
+
     """ Rotates a n x n matrix by 90 degrees """
     matcopy = copy.deepcopy(matrix)
     fwd = 0
