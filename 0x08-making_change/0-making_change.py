@@ -21,7 +21,7 @@ def makeChange(coins, total):
     if rem == 0:
         return total / maxi
     quot = total // maxi
-    for x in range(len(coins), 0, -1):
+    for x in range(len(coins) - 1, -1, -1):
         remc = rem % coins[x]
         if remc == 0:
             return quot + (rem // coins[x])
