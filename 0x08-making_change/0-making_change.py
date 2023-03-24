@@ -23,11 +23,11 @@ def makeChange(coins, total):
     quot = total // maxi
     for x in range(len(coins), 0, -1):
         remc = rem % coins[x]
-	if remc == 0:
-        return quot + (rem // coins[x])
-    if x == 0:
-        return -1
-    quotc = rem // coins[x]
-    rem = remc
-    quot += quotc
+        if remc == 0:
+            return quot + (rem // coins[x])
+        if x == 0:
+            return -1
+        quotc = rem // coins[x]
+        rem = remc
+        quot += quotc
     return quot
