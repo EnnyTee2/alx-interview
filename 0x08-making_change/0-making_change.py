@@ -28,7 +28,7 @@ def makeChange(coins, total):
             return quot + (rem // coins[x])
         if x == 0:
             return -1
-        quotc = remc // coins[x]
+        quotc = rem // coins[x]
         rem = remc
         quot += quotc
         x += 1
