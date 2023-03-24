@@ -14,20 +14,22 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
-    coins.sort()
-    max = coins[-1]
-    coins.pop()
+    coins = sorted(coins, reverse=True)
+    maxi = coins[1]
+    x = 0
+    coins.pop(0)
     rem = total % maxi
     if rem == 0:
         return total / maxi
     quot = total // maxi
-    for x in range(len(coins) - 1, -1, -1):
+    while x < len(coins):
         remc = rem % coins[x]
         if remc == 0:
             return quot + (rem // coins[x])
         if x == 0:
             return -1
-        quotc = rem // coins[x]
+        quotc = remc // coins[x]
         rem = remc
         quot += quotc
+        x += 1
     return quot
