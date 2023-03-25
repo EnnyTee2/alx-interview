@@ -20,15 +20,16 @@ def makeChange(coins, total):
     maxi = coins[0]
     x = 0
     coins.pop(0)
+    length = len(coins)
     rem = total % maxi
     if rem == 0:
         return total / maxi
     quot = total // maxi
-    while x < len(coins):
+    while x < length:
         remc = rem % coins[x]
         if remc == 0:
             return quot + (rem / coins[x])
-        if x == len(coins) - 1:
+        if x == length - 1:
             return -1
         quotc = rem // coins[x]
         rem = remc
