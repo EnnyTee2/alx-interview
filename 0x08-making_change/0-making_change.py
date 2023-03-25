@@ -28,7 +28,7 @@ def makeChange(coins, total):
     while x < length:
         remc = rem % coins[x]
         if remc == 0:
-            return quot + (rem / coins[x])
+            return quot + (rem // coins[x])
         if x == length - 1:
             return -1
         quotc = rem // coins[x]
