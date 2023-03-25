@@ -13,49 +13,34 @@ def makeChange(coins, total):
     coins is a list of the values of the coins in your possession
     """
     if total <= 0:
+        # checks for invalid total amount
         return 0
     if coins == []:
+        # checks for empty coins list
         return -1
-    coins = sorted(coins, reverse=True)
-    maxi = coins[0]
-    x = 0
-    coins.pop(0)
+    coins = sorted(coins, reverse=True) # sort and reverse the coins list
+    max = coins[0] # get the largest coin value
+    x = 0 # loop variable
+    coins.pop(0) # remove biggest coin from coins list
     length = len(coins)
-    rem = total % maxi
+    rem = total % max # check if the biggest coin is a change
     if rem == 0:
-        return total / maxi
-    quot = total // maxi
+        # if it is a change then return the total number
+        # of biggest coins that will make up the change
+        return total / max
+    
+    # if biggest coin cannot make a complete change
+    # scan the coins list for the next possible coin that will make change
+    quot = total // max # total possible number of biggest coin needed 
     while x < length:
-        remc = rem % coins[x]
-        if remc == 0:
+        remc = rem % coins[x] # store remainder for each coin
+        if remc == 0: # if coin makes up complete change
             return quot + (rem // coins[x])
         if x == length - 1:
+            # if unable to make complete change after scanning
             return -1
-        quotc = rem // coins[x]
-        rem = remc
-        quot += quotc
+        quotc = rem // coins[x] # total number of each coin needed
+        rem = remc # update what's left of total change
+        quot += quotc # update total number of coins needed
         x += 1
     return quot
-
-
-'''def makeChange(coins, total):
-    """Determines the fewest number of coins needed to meet a given
-    amount total when given a pile of coins of different values.
-    """
-    if total <= 0:
-        return 0
-    rem = total
-    coins_count = 0
-    coin_idx = 0
-    sorted_coins = sorted(coins, reverse=True)
-    n = len(coins)
-    while rem > 0:
-        if coin_idx >= n:
-            return -1
-        if rem - sorted_coins[coin_idx] >= 0:
-            rem -= sorted_coins[coin_idx]
-            coins_count += 1
-        else:
-            coin_idx += 1
-    return coins_count
-'''
