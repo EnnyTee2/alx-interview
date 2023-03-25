@@ -14,6 +14,8 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
+    if coins == []:
+        return -1
     coins = sorted(coins, reverse=True)
     maxi = coins[0]
     x = 0
