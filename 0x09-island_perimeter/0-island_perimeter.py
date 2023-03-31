@@ -3,43 +3,64 @@
 
 
 def island_perimeter(grid):
-    ""Return the perimeter
-    of the island described in grid:""
-    perimeter = 0
-    glen = len(grid)
-    zlen = len(grid[0])
+    '''returns the perimeter of the island described in grid'''
+    counter = 0
+    grid_max = len(grid) - 1  # index of the last list in the grid
+    lst_max = len(grid[0]) - 1  # index of the last square in list
 
-    for i in range(0, glen):
-        if i == 0 or i == glen - 1:  # top or bottom border
-            for j in range(0, zlen):
-                if grid[i][j] == 1:  # land found on border
-                    if grid[i][j+1] == 0 && grid[i][j-1] == 0:
-                        perimeter += 3
-                    while j > 0 && j < zlen -1:
-                        if grid[i][j-1] == 0 && grid[i][j+1] == 1:
-                            perimeter += 2
-                        if grid[i][j-1] == 1 && grid[i][j+1] == 1:
-                            perimeter += 1
+    for lst_idx, lst in enumerate(grid):
+        for land_idx, land in enumerate(lst):
+            if land == 1:
+                # left and right
+                if land_idx == 0:
+                    # left side
+                    counter += 1
 
+                    # right side
+                    if lst[land_idx + 1] == 0:
+                        counter += 1
+                elif land_idx == lst_max:
+                    # left side
+                    if lst[land_idx - 1] == 0:
+                        counter += 1
 
-        else:
-            for j in range(0, zlen):
-                if j == 0 or j == zlen - 1:  # left or right border
-                    if grid[i][j] == 1:  # land found on border
-                        
+                    # right side
+                    counter += 1
                 else:
-                    if grid[i][j] == 1:  # land found in cell
-                        # The if blocks below detects
-                        # if the cell is surrounded by water
-                        if grid[i][j+1] == 0:
-                            perimeter += 1
-                        if grid[i][j-1] == 0:
-                            perimeter += 1
-                        if grid[i+1][j] == 0:
-                            perimeter += 1
-                        if grid[i-1][j] == 0:
-                            perimeter += 1
-    return perimeter
+                    # left side
+                    if lst[land_idx - 1] == 0:
+                        counter += 1
+
+                    # right side
+                    if lst[land_idx + 1] == 0:
+                        counter += 1
+
+                # top and down
+                if lst_idx == 0:
+                    # top side
+                    counter += 1
+
+                    # bottom side
+                    if grid[lst_idx + 1][land_idx] == 0:
+                        counter += 1
+                elif lst_idx == grid_max:
+                    # top side
+                    if grid[lst_idx - 1][land_idx] == 0:
+                        counter += 1
+
+                    # bottom side
+                    counter += 1
+                else:
+                    # top side
+                    if grid[lst_idx - 1][land_idx] == 0:
+                        counter += 1
+
+                    # bottom side
+                    if grid[lst_idx + 1][land_idx] == 0:
+                        counter += 1
+
+    return counter
+
 
 
 """def island_perimeter(grid):
