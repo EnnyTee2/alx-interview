@@ -20,8 +20,8 @@ def island_perimeter(grid):
                             perimeter += 2
                         if grid[i][j-1] == 1 && grid[i][j+1] == 1:
                             perimeter += 1
-                    
-                    
+
+
         else:
             for j in range(0, zlen):
                 if j == 0 or j == zlen - 1:  # left or right border
