@@ -33,7 +33,7 @@ def isWinner(x, nums):
     if x < 1 or not nums:
         return None
     Ben = 0
-    Maria = 0
+    Maria = 1
     for number in nums:
         set_prime = [z for z in range(1, number+1) if isPrime(z)]
         prime_count = len(set_prime)
