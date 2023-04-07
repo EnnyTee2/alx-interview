@@ -48,6 +48,6 @@ def isWinner(x, nums):
     if Ben == Maria:
         return None
     elif Ben > Maria:
-        return Ben
+        return 'Ben'
     else:
-        return Maria
+        return 'Maria'
