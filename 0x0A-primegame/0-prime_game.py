@@ -29,6 +29,8 @@ def isWinner(x, nums):
         n and x are assumed to be <= 10000
     """
 
+    if x is None or nums is None or x == 0 or nums == []:
+        return None
     Ben = 0
     Maria = 0
     for number in nums:
