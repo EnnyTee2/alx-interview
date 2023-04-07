@@ -30,7 +30,7 @@ def isWinner(x, nums):
             None if no winner
         n and x are assumed to be <= 10000
     """
-    if x < 1 or not nums:
+    if x < 1 or not nums or x == None or nums == []:
         return None
     Ben = 0
     Maria = 0
