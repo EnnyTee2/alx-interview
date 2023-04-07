@@ -6,16 +6,15 @@ def isPrime(num):
     """ checks if a number is prime """
     if num == 1 or num == 0:
         return False
-    status = 1
     index = 0
     prime_fact = [2, 3, 5, 7]
     while index < len(prime_fact):
-        if num == prime_fact[index]:
+        if prime_fact[index] == num:
             pass
         else:
             status = num % prime_fact[index]
-        if status == 0:
-            return False
+            if status == 0:
+                return False
         index += 1
     return True
 
