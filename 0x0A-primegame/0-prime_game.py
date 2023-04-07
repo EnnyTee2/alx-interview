@@ -9,7 +9,7 @@ def isPrime(num):
     if num == 1:
         return False
     index = 0
-    prime_fact = [2,3,4,5,6,7,8,9]
+    prime_fact = [2, 3, 4, 5, 6, 7, 8, 9]
     while index < len(prime_fact):
         if num == prime_fact[index]:
             pass
@@ -34,13 +34,13 @@ def isWinner(x, nums):
     for number in nums:
         set_prime = [z for z in range(1, number+1) if isPrime(z)]
         count = 0
-        M,B = (0,1)
+        M, B = (0, 1)
         prime_count = len(set_prime)
         while count < prime_count:
             if count % 2 == 0:
-                M,B = (1,0)
+                M, B = (1, 0)
             else:
-                M,B = (0,1) 
+                M, B = (0, 1)
             count += 1
         Ben += B
         Maria += M
@@ -50,4 +50,4 @@ def isWinner(x, nums):
     elif Ben > Maria:
         return Ben
     else:
-        return Maria      
+        return Maria 
