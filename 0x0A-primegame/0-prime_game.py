@@ -22,10 +22,12 @@ def isPrime(num):
 
 def isWinner(x, nums):
     """
+    Gets the winner of the Prime Game
     Args:
-        x: number of rounds
-        nums: array of n
+        x (int): number of rounds
+        nums (int): array of n
     Return: name of the winning player
+            None if no winner
         n and x are assumed to be <= 10000
     """
     if x is None or nums is None or x == 0 or nums == []:
