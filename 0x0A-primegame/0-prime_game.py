@@ -36,13 +36,13 @@ def isWinner(x, nums):
     for number in nums:
         set_prime = [z for z in range(1, number+1) if isPrime(z)]
         prime_count = len(set_prime)
-            if prime_count % 2 == 0:
-                Ben += 1
-            else:
-                Maria += 1
+        if prime_count % 2 == 0:
+            Ben += 1
+        else:
+            Maria += 1
 
     if Ben > Maria:
         return 'Ben'
     elif Maria > Ben:
         return 'Maria'
-    retunrn None
+    return None
