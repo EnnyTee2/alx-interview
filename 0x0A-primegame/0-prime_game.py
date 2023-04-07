@@ -13,8 +13,8 @@ def isPrime(num):
             pass
         else:
             status = num % prime_fact[index]
-            if status == 0:
-                return False
+        if status == 0:
+            return False
         index += 1
     return True
 
