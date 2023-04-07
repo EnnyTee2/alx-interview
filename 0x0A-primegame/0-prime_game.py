@@ -50,4 +50,4 @@ def isWinner(x, nums):
     elif Ben > Maria:
         return Ben
     else:
-        return Maria 
+        return Maria
