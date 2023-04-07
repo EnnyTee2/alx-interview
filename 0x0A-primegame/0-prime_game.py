@@ -7,6 +7,7 @@ def isPrime(num):
     if num == 1 or num == 0:
         return False
     index = 0
+    status = 1
     prime_fact = [2, 3, 5, 7]
     while index < len(prime_fact):
         if prime_fact[index] == num:
