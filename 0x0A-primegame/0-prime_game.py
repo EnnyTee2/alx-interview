@@ -4,7 +4,7 @@
 
 def isPrime(num):
     """ checks if a number is prime """
-    if num == 1 or num == 0:
+    if num < 2:
         return False
     index = 0
     status = 1
