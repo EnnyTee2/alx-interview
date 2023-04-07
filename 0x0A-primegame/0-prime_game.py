@@ -44,8 +44,8 @@ def isWinner(x, nums):
             else:
                 M, B = (0, 1)
             count += 1
-        Ben += B
-        Maria += M
+            Ben += B
+            Maria += M
 
     if Ben == Maria:
         return None
