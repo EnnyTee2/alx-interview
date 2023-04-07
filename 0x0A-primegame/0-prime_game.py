@@ -8,7 +8,7 @@ def isPrime(num):
         return False
     status = 1
     index = 0
-    prime_fact = [2, 3, 4, 5, 6, 7, 8, 9]
+    prime_fact = [2, 3, 5, 7]
     while index < len(prime_fact):
         if num == prime_fact[index]:
             pass
