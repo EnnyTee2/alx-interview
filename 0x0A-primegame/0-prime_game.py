@@ -6,7 +6,7 @@ def isPrime(num):
     """ checks if a number is prime """
     if n == 0 or n == 1:
         return False
-    for i in range(2, (num//2) + 1):
+    for i in range(2,  num - 1):
         if num % i == 0:
             return False
     return True
