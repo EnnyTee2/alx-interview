@@ -27,7 +27,7 @@ def isWinner(x, nums):
     Ben = 0
     Maria = 0
     count = 0
-    while count <= x:
+    while count < x:
         set_prime = [z for z in range(1, nums[x]) if isPrime(z)]
         prime_count = len(set_prime)
         if prime_count % 2 == 0:
