@@ -42,4 +42,3 @@ def isWinner(x, nums):
     elif Maria > Ben:
         return 'Maria'
     return None
-l
