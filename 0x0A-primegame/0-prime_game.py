@@ -4,20 +4,13 @@
 
 def isPrime(num):
     """ checks if a number is prime """
-    if num < 2:
-        return False
-    index = 0
-    status = 1
-    prime_fact = [2, 3, 5, 7]
-    while index < len(prime_fact):
-        if prime_fact[index] == num:
-            pass
-        else:
-            status = num % prime_fact[index]
-        if status == 0:
-            return False
-        index += 1
-    return True
+    temp = 0
+	if num == 1 or num == 0:
+		return False
+	for i in range(2, int(num/2) + 1):
+		if num % i == 0:
+			return False
+	return True
 
 
 def isWinner(x, nums):
