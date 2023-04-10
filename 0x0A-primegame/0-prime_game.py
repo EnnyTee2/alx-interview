@@ -43,7 +43,7 @@ def isWinner(x, nums):
         else:
             Maria += 1
         count += 1
-    print(f'Ben: {Ben} and Maria: {Maria}')
+    #print(f'Ben: {Ben} and Maria: {Maria}')
     if Ben > Maria:
         return 'Ben'
     elif Maria > Ben:
